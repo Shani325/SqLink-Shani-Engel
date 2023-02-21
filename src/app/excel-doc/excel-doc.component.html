@@ -1,0 +1,43 @@
+
+
+<form [formGroup]="fileUploadForm" (ngSubmit)="onFormSubmit()">
+    <div class="row">       
+
+        <div class="col-sm-6 text-center">
+
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="customFile" name="myfile"
+                    (change)="onFileSelect($event)" #UploadFileInput>                
+            </div>
+
+        </div>
+        <div class="col-sm-6 text-center">
+            <button class="btn btn-primary" type="submit">Upload</button>
+        </div>
+    </div>
+</form>
+
+<table *ngIf="arrayC">
+    <th>מזהה</th>
+    <th>שם</th>
+    <th>ת.ז.</th>
+    <th>גיל</th>
+    <tr *ngFor="let a of arrayC">
+        <td>{{a.id}}</td>
+        <td>{{ a.fullName }}</td>
+        <td>{{ a.tz }}</td>
+        <td>{{2023- a.yearOfBirth }}</td>
+    </tr>
+</table>
+<table *ngIf="arrayI">
+    
+    <th>שם</th>
+    <th>ת.ז.</th>
+    <th>גיל</th>
+    <tr *ngFor="let a of arrayI">
+        
+        <td>{{ a.fullName }}</td>
+        <td>{{ a.tz }}</td>
+        <td>{{2023- a.yearOfBirth }}</td>
+    </tr>
+</table>
